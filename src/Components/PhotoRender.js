@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Photo from "./Photo";
+import { Photo } from "./Photo";
 import axios from "axios";
+import styled from "styled-components";
 
+const Input = styled.input`
+	background: black;
+	color: white;
+	margin-left: 10px;
+`;
 export default function PhotoRender() {
 	const [data, setData] = useState({});
 	//get today's date
@@ -41,7 +47,7 @@ export default function PhotoRender() {
 		<div className="photo-container">
 			<form>
 				<label htmlFor="date">Choose a Day</label>
-				<input id="date" type="date" onChange={handleChange} value={date} />
+				<Input id="date" type="date" onChange={handleChange} value={date} />
 			</form>
 			<Photo data={data} />
 		</div>
