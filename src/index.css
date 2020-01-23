@@ -16,15 +16,6 @@ code {
 .copyright-caption {
 	display: flex;
 }
-@media (max-width: 900px) {
-	.copyright-caption {
-		display: flex;
-		flex-direction: column;
-	}
-	.copyright-caption .copyright-date {
-		width: 100%;
-	}
-}
 .copyright-date {
 	width: 50%;
 	text-align: center;

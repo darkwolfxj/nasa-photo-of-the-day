@@ -4,11 +4,28 @@ import axios from "axios";
 
 export default function PhotoRender() {
 	const [data, setData] = useState({});
+	//get today's date
 	var today = new Date();
-	var Today =
-		today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-	const [date, setDate] = useState(Today);
+	//format the date
+	function formatDate() {
+		let d = "" + today.getDate();
+		let m = "" + (today.getMonth() + 1);
+		let y = "" + today.getFullYear();
 
+		if (d.length < 2) {
+			d = "0" + m;
+		}
+		if (m.length < 2) {
+			m = "0" + m;
+		}
+		return [y, m, d].join("-");
+	}
+	let thisDay =
+		today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+
+	let Today = formatDate(thisDay);
+
+	const [date, setDate] = useState(Today);
 	useEffect(() => {
 		axios
 			.get(
@@ -24,7 +41,7 @@ export default function PhotoRender() {
 		<div className="photo-container">
 			<Photo data={data} />
 			<form>
-				<label for="date">Choose a Day</label>
+				<label htmlFor="date">Choose a Day</label>
 				<input id="date" type="date" onChange={handleChange} value={date} />
 			</form>
 		</div>
