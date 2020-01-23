@@ -6,5 +6,8 @@ const Headline = styled.p`
 	background: linear-gradient(red, orange, red, yellow);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	@media (max-width: 900px) {
+		font-size: 2rem;
+	}
 `;
 export default Headline;

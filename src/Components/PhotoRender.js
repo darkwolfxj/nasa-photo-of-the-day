@@ -34,7 +34,7 @@ export default function PhotoRender() {
 			.then((response) => setData(response.data))
 			.catch((error) => console.log("Data was not returned", error));
 	}, [date]);
-	const handleChange = (e) => {
+	let handleChange = (e) => {
 		setDate(e.target.value);
 	};
 	return (
