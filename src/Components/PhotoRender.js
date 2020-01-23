@@ -18,7 +18,6 @@ export default function PhotoRender() {
 			.catch((error) => console.log("Data was not returned", error));
 	}, [date]);
 	const handleChange = (e) => {
-		console.log(e.target.value);
 		setDate(e.target.value);
 	};
 	return (
