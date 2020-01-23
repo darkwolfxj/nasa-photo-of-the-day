@@ -39,11 +39,11 @@ export default function PhotoRender() {
 	};
 	return (
 		<div className="photo-container">
-			<Photo data={data} />
 			<form>
 				<label htmlFor="date">Choose a Day</label>
 				<input id="date" type="date" onChange={handleChange} value={date} />
 			</form>
+			<Photo data={data} />
 		</div>
 	);
 }
