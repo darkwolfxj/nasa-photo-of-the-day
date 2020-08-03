@@ -19,7 +19,7 @@ export default function PhotoRender() {
 		let y = "" + today.getFullYear();
 
 		if (d.length < 2) {
-			d = "0" + m;
+			d = "0" + d;
 		}
 		if (m.length < 2) {
 			m = "0" + m;
